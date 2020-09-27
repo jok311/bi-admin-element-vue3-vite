@@ -1,6 +1,6 @@
 <template>
-<div>
-  <HelloWorld msg=" Vite" />
+<div id="app">
+  <router-view/>
 </div>
 </template>
 
