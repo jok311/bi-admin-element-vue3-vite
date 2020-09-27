@@ -19,12 +19,12 @@ module.exports = {
   outDir: 'dist',
   assetsDir: 'static',
 
-  // optimizeDeps: {
-  //   include: ["vue"]
-  // },
+  optimizeDeps: {
+    // include: ["vue", "ant-design-vue"]
+  },
   alias: {
-    '/@/': path.resolve(__dirname, './src'),
-    '/components/': path.resolve(__dirname, './src/components')
+    // '/@/': path.resolve(__dirname, './src'),
+    // '/components/': path.resolve(__dirname, './src/components')
   },
 
   // rollupInputOptions: {
