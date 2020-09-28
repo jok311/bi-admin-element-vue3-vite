@@ -9,8 +9,8 @@ import App from './App.vue';
 
 const app = createApp(App)
 
-app.mount('#app');
-app.use(antd)
-app.use(router)
 
+
+
+app.use(antd).use(router).mount('#app'); //.mount必须放到router之后
 

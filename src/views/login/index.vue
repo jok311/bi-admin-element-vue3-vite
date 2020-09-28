@@ -1,5 +1,20 @@
+
+  
 <template>
-  <div class="login-box">
-    登录
+  <div>
+    login-page
+    <br>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+    name: 'Home',
+    components: {
+    }
+})
+</script>
+
+<style>
+</style>
