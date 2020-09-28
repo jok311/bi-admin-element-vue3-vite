@@ -1,17 +1,21 @@
 <template>
   <div class="lay-out-box">
-    <site-menu></site-menu>
+    <side-menu></side-menu>
     <app-main></app-main>
   </div>
 </template>
 
 <script>
 import appMain from './components/app-main.vue'
-import siteMenu from './components/site-menu.vue'
+import sideMenu from './components/side-menu.vue'
 export default {
   components: {
     appMain,
-    siteMenu
+    sideMenu
   }
 }
 </script>
+<style lang="stylus" scoped>
+.lay-out-box
+  display flex
+</style>
