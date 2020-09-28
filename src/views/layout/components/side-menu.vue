@@ -15,12 +15,16 @@
         :inline-collapsed="collapsed"
       >
         <a-menu-item key="1">
-          <PieChartOutlined />
-          <span>Option 1</span>
+          <router-link to="/dash/box">
+            <PieChartOutlined />
+            <span>dash-box</span>
+          </router-link>
         </a-menu-item>
         <a-menu-item key="2">
-          <DesktopOutlined />
-          <span>Option 2</span>
+          <router-link to="/dash/template">
+            <DesktopOutlined />
+            <span>dash-template</span>
+          </router-link>          
         </a-menu-item>
         <a-menu-item key="3">
           <InboxOutlined />
