@@ -2,17 +2,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 const routerHistory = createWebHistory()
 
-import login from '../views/login/index.vue'
-import home from '../views/home/index.vue'
-
-console.log(login)
-
-// console.log(login)
-
-// const login = '111'
 
 /* Layout */
-// import Layout from 'views/layout/index'
+import Layout from '../views/layout/index.vue'
 
 //不需要权限控制的路由
 // const AllRoutes = [
@@ -41,14 +33,34 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: home,
+      component: () => import('../views/home/index.vue'),
       name: 'home'
     },
     {
       path: '/login',
-      component: login,
+      component: () => import('../views/login/index.vue'),
       name: 'login'
-    }
+    },
+    {
+      path: '/dash',
+      component: Layout,
+      redirect: '/dash/template',
+      children: [
+        {
+          path: 'template',
+          component: () => import('../views/pages/dash-template/index.vue'),
+          name: 'DashTemplate',
+          meta: { title: 'DashTemplate', affix: true }
+        },
+        {
+          path: 'box',
+          component: () => import('../views/pages/dash/index.vue'),
+          name: 'DashBox',
+          meta: { title: 'DashBox', affix: true }
+        },
+      ]
+    },
+
   ]
 })
 

@@ -1,5 +1,7 @@
 'use strict'
 const path = require('path')
+
+
 const defaultSettings = require('./src/settings.js')
 
 function resolve(dir) {
@@ -8,7 +10,7 @@ function resolve(dir) {
 
 const name = defaultSettings.title || 'bi-element-admin-vue3' // page title
 
-module.exports = {
+const config = {
   /**
    * github: https://github.com/vitejs/vite
    * Detail: https://github.com/vitejs/vite/blob/master/src/node/build/index.ts
@@ -20,7 +22,7 @@ module.exports = {
   assetsDir: 'static',
 
   optimizeDeps: {
-    // include: ["vue", "ant-design-vue"]
+    include: ["ant-design-vue", "@ant-design/colors"]
   },
   alias: {
     // '/@/': path.resolve(__dirname, './src'),
@@ -36,3 +38,4 @@ module.exports = {
   // ]
 
 }
+module.exports = config

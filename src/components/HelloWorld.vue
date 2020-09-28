@@ -19,7 +19,9 @@
 </template>
 
 <script>
+
 // import VueGridLayout from 'vue-grid-layout';
+
 // console.log(VueGridLayout, 131313)
 import { ref, toRefs, reactive, onMounted, watch, watchEffect, getCurrentInstance } from "vue";
 
@@ -38,7 +40,7 @@ export default {
 
     const count = ref(0);
 
-    const value1 = ref(null)
+    const value1 = ref('2020-09')
     const value2 = ref(null)
     const value3 = ref(null)
 
@@ -76,6 +78,7 @@ export default {
       value3,
       count,
       onChange,
+      onOk
     };
   },
 };
