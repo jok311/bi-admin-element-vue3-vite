@@ -25,9 +25,11 @@ const config = {
     include: ["ant-design-vue", "@ant-design/colors"]
   },
   alias: {
+    // '/@/': path.resolve(__dirname, 'src')
     // '/@/': path.resolve(__dirname, './src'),
     // '/components/': path.resolve(__dirname, './src/components')
   },
+  
 
   // rollupInputOptions: {
   //   external: ['vue']
@@ -38,4 +40,5 @@ const config = {
   // ]
 
 }
+
 module.exports = config

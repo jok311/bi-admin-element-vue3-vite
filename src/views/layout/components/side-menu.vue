@@ -129,6 +129,6 @@ export default {
     span
       // font-size 24px
   .menu-box
-    height 100vh
+    height 96vh
     overflow-y scroll
 </style>

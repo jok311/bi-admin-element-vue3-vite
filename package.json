@@ -18,8 +18,10 @@
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.0-rc.1",
     "babel-plugin-import": "^1.13.0",
+    "glob": "^7.1.6",
     "less": "^2.7.2",
     "less-loader": "^7.0.1",
+    "rollup-plugin-require-context": "^1.0.0",
     "stylus": "^0.54.8",
     "stylus-loader": "^3.0.2",
     "vite": "^1.0.0-rc.1"

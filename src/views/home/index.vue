@@ -5,8 +5,8 @@
   </div>
 </template>
 <script>
-import HelloWorld from '/src/components/HelloWorld.vue'
+// import HelloWorld from '/src/components/HelloWorld.vue'
 export default {
-  components: { HelloWorld }
+  // components: { HelloWorld }
 }
 </script>

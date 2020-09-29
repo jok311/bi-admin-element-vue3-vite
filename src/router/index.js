@@ -1,6 +1,8 @@
 
-import { createRouter, createWebHistory } from 'vue-router'
-const routerHistory = createWebHistory()
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
+// const routerHistory = createWebHistory(process.env.BASE_URL)
+const routerHistory = createWebHashHistory()
+
 
 
 /* Layout */
