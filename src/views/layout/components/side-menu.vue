@@ -26,6 +26,12 @@
             <span>dash-template</span>
           </router-link>          
         </a-menu-item>
+        <a-menu-item key="2999">
+          <router-link to="/draggable/index">
+            <DesktopOutlined />
+            <span>draggable-box</span>
+          </router-link>          
+        </a-menu-item>
         <a-menu-item key="3">
           <InboxOutlined />
           <span>Option 3</span>

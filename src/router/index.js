@@ -46,7 +46,7 @@ const router = createRouter({
     {
       path: '/dash',
       component: Layout,
-      redirect: '/dash/template',
+      // redirect: '/dash/template',
       children: [
         {
           path: 'template',
@@ -60,8 +60,21 @@ const router = createRouter({
           name: 'DashBox',
           meta: { title: 'DashBox', affix: true }
         },
+
       ]
     },
+    {
+      path: '/draggable',
+      component: Layout,
+      children: [
+        {
+          path: 'index',
+          component: () => import('../views/pages/vue-draggable/index.vue'),
+          name: 'Draggable',
+          meta: { title: 'draggable', affix: true }
+        },
+      ]
+    }
 
   ]
 })

@@ -16,5 +16,6 @@ export default {
 
 <style lang="stylus">
 .app-main-box
-	height 56px
+    height 56px
+    flex 1
 </style>
