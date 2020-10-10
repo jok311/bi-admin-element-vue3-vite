@@ -9,6 +9,11 @@
         {{ element.name }}
       </div>
     </draggable>
+
+    <router-link to="/side/test">
+      <span>side/test</span>
+    </router-link>    
+
   </div>
 </template>
 <script>

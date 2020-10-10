@@ -74,7 +74,18 @@ const router = createRouter({
           meta: { title: 'draggable', affix: true }
         },
       ]
-    }
+    },
+    {
+      component: Layout,
+      children: [
+        {
+          path: '/side/test',
+          component: () => import('../views/pages/side-bar-test/index.vue'),
+          name: 'SideBar',
+          meta: { title: 'SideBar', affix: true }
+        },
+      ]
+    },
 
   ]
 })

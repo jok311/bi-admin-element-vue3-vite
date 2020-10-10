@@ -32,6 +32,12 @@
             <span>draggable-box</span>
           </router-link>          
         </a-menu-item>
+        <a-menu-item key="29999">
+          <router-link to="/side/test">
+            <DesktopOutlined />
+            <span>side-test</span>
+          </router-link>          
+        </a-menu-item>
         <a-menu-item key="3">
           <InboxOutlined />
           <span>Option 3</span>
