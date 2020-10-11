@@ -84,6 +84,17 @@ const router = createRouter({
           component: () => import('../views/pages/vue-grid-out/index.vue'),
           name: 'Vuegridout',
           meta: { title: 'Vuegridout', affix: true }
+        }]
+    },
+        
+    {
+      component: Layout,
+      children: [
+        {
+          path: '/side/test',
+          component: () => import('../views/pages/side-bar-test/index.vue'),
+          name: 'SideBar',
+          meta: { title: 'SideBar', affix: true }
         },
       ]
     },
