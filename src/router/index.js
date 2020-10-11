@@ -44,18 +44,18 @@ const router = createRouter({
       name: 'login'
     },
     {
-      path: '/dash',
+      // path: '/dash',
       component: Layout,
       // redirect: '/dash/template',
       children: [
         {
-          path: 'template',
+          path: '/dash/template',
           component: () => import('../views/pages/dash-template/index.vue'),
           name: 'DashTemplate',
           meta: { title: 'DashTemplate', affix: true }
         },
         {
-          path: 'box',
+          path: '/dash/box',
           component: () => import('../views/pages/dash/index.vue'),
           name: 'DashBox',
           meta: { title: 'DashBox', affix: true }
@@ -64,17 +64,29 @@ const router = createRouter({
       ]
     },
     {
-      path: '/draggable',
+      // path: '/draggable',
       component: Layout,
       children: [
         {
-          path: 'index',
+          path: '/draggable/index',
           component: () => import('../views/pages/vue-draggable/index.vue'),
           name: 'Draggable',
           meta: { title: 'draggable', affix: true }
         },
       ]
-    }
+    },
+    {
+      path: '/vue-grid-out',
+      component: Layout,
+      children: [
+        {
+          path: 'index',
+          component: () => import('../views/pages/vue-grid-out/index.vue'),
+          name: 'Vuegridout',
+          meta: { title: 'Vuegridout', affix: true }
+        },
+      ]
+    },
 
   ]
 })
