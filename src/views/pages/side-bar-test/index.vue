@@ -4,16 +4,19 @@
     <router-link to="/draggable/index">
       <span>draggable</span>
     </router-link>
-    <line-bar-chart :data="dataColumns.data" :columns="dataColumns.columns"></line-bar-chart>
+    {{ title }}
+    <div @click="addCount()">count++</div>
+    <div>{{ count }}</div>
+    <line-bar-chart :data="data" :columns="columns" :title="title"></line-bar-chart>
   </div>
 </template>
 <script>
-import { ref, toRefs, reactive } from "vue";
+import { ref, toRefs, reactive, onMounted, watch, watchEffect } from "vue";
 import lineBarChart from "/src/components/global/lineBarChart.vue";
 export default {
   components: { lineBarChart },
   setup() {
-    let dataColumns = {
+    let dataColumns = reactive({
       columns: [
         { label: "日期", key: "date" },
         {
@@ -81,10 +84,27 @@ export default {
         { date: "2020-10-08", total: "total", pv: 36725.32 },
         { date: "2020-10-09", total: "total", pv: 256.78 },
       ],
+    })
+
+
+    let title = ref('标题')
+
+    let count = ref(1)
+
+    function addCount() {
+      count.value++
+      title.value = '新标题' + count.value
+      dataColumns = reactive({    
+        data: [],
+        columns: []
+      })    
     }
 
     return {
-      dataColumns
+      title,
+      count,
+      ...toRefs(dataColumns),
+      addCount
     }
   },
 };
