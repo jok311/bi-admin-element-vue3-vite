@@ -33,6 +33,12 @@
           </router-link>          
         </a-menu-item>
         <a-menu-item key="29999">
+          <router-link to="/vue-grid-out/index">
+            <DesktopOutlined />
+            <span>vue-grid-out</span>
+          </router-link>          
+        </a-menu-item>
+        <a-menu-item key="29299">
           <router-link to="/side/test">
             <DesktopOutlined />
             <span>side-test</span>
@@ -106,9 +112,9 @@ export default {
   data() {
     return {
       collapsed: false,
-      selectedKeys: ['1'],
-      openKeys: ['sub1'],
-      preOpenKeys: ['sub1'],
+      selectedKeys: [],
+      openKeys: [],
+      preOpenKeys: [],
     };
   },
   watch: {

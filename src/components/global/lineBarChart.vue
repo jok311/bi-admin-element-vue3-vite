@@ -292,17 +292,28 @@ export default {
   },
 
 
-  setup({columns}) {
-    console.log(columns, 296)
-    for (let i = 0; i < columns.length; i++) {
-      const element = columns[i];
-      console.log(element)
+  setup(props) {
+    let { columns, data } = props
+    console.log(columns, data, 296)
+
+
+    watch(
+      () => props.columns,
+      () => {
+        if (props.columns) {
+          console.log(props.columns, 304)
+        }
+      },
+      {
+        immediate: true,
+      }
+    );
+    onMounted(() => {
+      console.log('mounted!', columns)
       
-    }
-    // watch(() => columns, (oldVlaue, newValue) => {
-    //   console.log(oldVlaue, newValue, '改变')
-    // })
-  },  
+    })
+  },
+
 
   watch: {
     data(val) {
