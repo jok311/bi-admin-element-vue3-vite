@@ -294,6 +294,11 @@ export default {
 
   setup({columns}) {
     console.log(columns, 296)
+    for (let i = 0; i < columns.length; i++) {
+      const element = columns[i];
+      console.log(element)
+      
+    }
     // watch(() => columns, (oldVlaue, newValue) => {
     //   console.log(oldVlaue, newValue, '改变')
     // })
