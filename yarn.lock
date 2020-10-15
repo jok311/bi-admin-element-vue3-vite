@@ -83,10 +83,157 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@interactjs/actions@1.10.0", "@interactjs/actions@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/actions/download/@interactjs/actions-1.10.0.tgz#6ac1f6152b0722c45bd68a09c18ffe4c3e5a331e"
+  integrity sha1-asH2FSsHIsRb1ooJwY/+TD5aMx4=
+  optionalDependencies:
+    "@interactjs/interact" "1.10.0"
+
+"@interactjs/arrange@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/arrange/download/@interactjs/arrange-1.10.0.tgz#67df7dce613b2b501072752c02ad681a60cc6fa9"
+  integrity sha1-Z999zmE7K1AQcnUsAq1oGmDMb6k=
+
+"@interactjs/auto-scroll@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/auto-scroll/download/@interactjs/auto-scroll-1.10.0.tgz#8472f4204468e01c892d2971d783e1fd56dd682e"
+  integrity sha1-hHL0IERo4ByJLSlx14Ph/VbdaC4=
+  optionalDependencies:
+    "@interactjs/interact" "1.10.0"
+
+"@interactjs/auto-start@1.10.0", "@interactjs/auto-start@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/auto-start/download/@interactjs/auto-start-1.10.0.tgz#0b7dd2fead7d656ff11a5a05a7c0977dd4d66617"
+  integrity sha1-C33S/q19ZW/xGloFp8CXfdTWZhc=
+  optionalDependencies:
+    "@interactjs/interact" "1.10.0"
+
+"@interactjs/clone@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/clone/download/@interactjs/clone-1.10.0.tgz#545e4d83cb66d51fee03591862f3b4089f93f95d"
+  integrity sha1-VF5Ng8tm1R/uA1kYYvO0CJ+T+V0=
+
+"@interactjs/core@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/core/download/@interactjs/core-1.10.0.tgz#6d8dff5ef8736c39db3f7d9aec28d7cd502797a0"
+  integrity sha1-bY3/XvhzbDnbP32a7CjXzVAnl6A=
+
+"@interactjs/dev-tools@1.10.0", "@interactjs/dev-tools@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/dev-tools/download/@interactjs/dev-tools-1.10.0.tgz#56c3a56b777f7731eff02c05a6594aa44fb5cb19"
+  integrity sha1-VsOla3d/dzHv8CwFpllKpE+1yxk=
+  dependencies:
+    "@interactjs/utils" "1.10.0"
+  optionalDependencies:
+    "@interactjs/interact" "1.10.0"
+
+"@interactjs/feedback@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/feedback/download/@interactjs/feedback-1.10.0.tgz#7fb98a2af21666d1c7a83fbaaaedf234a621b573"
+  integrity sha1-f7mKKvIWZtHHqD+6qu3yNKYhtXM=
+
+"@interactjs/inertia@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/inertia/download/@interactjs/inertia-1.10.0.tgz#0a72f27cccf2437cf212c2dfc9e7f5fba32faeef"
+  integrity sha1-CnLyfMzyQ3zyEsLfyef1+6Mvru8=
+  dependencies:
+    "@interactjs/offset" "1.10.0"
+  optionalDependencies:
+    "@interactjs/interact" "1.10.0"
+
+"@interactjs/interact@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/interact/download/@interactjs/interact-1.10.0.tgz#66e98ce789065e178be28b0213ddfb38427111d8"
+  integrity sha1-ZumM54kGXheL4osCE937OEJxEdg=
+  dependencies:
+    "@interactjs/core" "1.10.0"
+    "@interactjs/types" "1.10.0"
+    "@interactjs/utils" "1.10.0"
+
+"@interactjs/interactjs@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/interactjs/download/@interactjs/interactjs-1.10.0.tgz#a0768c6fe6ea20c9d5a36adf15bf9bbfc6e39494"
+  integrity sha1-oHaMb+bqIMnVo2rfFb+bv8bjlJQ=
+  dependencies:
+    "@interactjs/actions" "1.10.0"
+    "@interactjs/arrange" "1.10.0"
+    "@interactjs/auto-scroll" "1.10.0"
+    "@interactjs/auto-start" "1.10.0"
+    "@interactjs/clone" "1.10.0"
+    "@interactjs/core" "1.10.0"
+    "@interactjs/dev-tools" "1.10.0"
+    "@interactjs/feedback" "1.10.0"
+    "@interactjs/inertia" "1.10.0"
+    "@interactjs/interact" "1.10.0"
+    "@interactjs/modifiers" "1.10.0"
+    "@interactjs/multi-target" "1.10.0"
+    "@interactjs/offset" "1.10.0"
+    "@interactjs/pointer-events" "1.10.0"
+    "@interactjs/react" "1.10.0"
+    "@interactjs/reflow" "1.10.0"
+    "@interactjs/utils" "1.10.0"
+    "@interactjs/vue" "1.10.0"
+
+"@interactjs/modifiers@1.10.0", "@interactjs/modifiers@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/modifiers/download/@interactjs/modifiers-1.10.0.tgz#2f9badbc8668e6da221aa87701fec29f8ddb3b01"
+  integrity sha1-L5utvIZo5toiGqh3Af7Cn43bOwE=
+  dependencies:
+    "@interactjs/snappers" "1.10.0"
+  optionalDependencies:
+    "@interactjs/interact" "1.10.0"
+
+"@interactjs/multi-target@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/multi-target/download/@interactjs/multi-target-1.10.0.tgz#426a0ac6514db1da0b9faaa998f6c0fc129814f9"
+  integrity sha1-QmoKxlFNsdoLn6qpmPbA/BKYFPk=
+
+"@interactjs/offset@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/offset/download/@interactjs/offset-1.10.0.tgz#f3b921f1689c4e892892788fc7fc118b38f207f2"
+  integrity sha1-87kh8WicTokokniPx/wRizjyB/I=
+  optionalDependencies:
+    "@interactjs/interact" "1.10.0"
+
+"@interactjs/pointer-events@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/pointer-events/download/@interactjs/pointer-events-1.10.0.tgz#f9e0a7afd5dc35ba2600f74a0ca1bfed88a04672"
+  integrity sha1-+eCnr9XcNbomAPdKDKG/7YigRnI=
+  optionalDependencies:
+    "@interactjs/interact" "1.10.0"
+
+"@interactjs/react@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/react/download/@interactjs/react-1.10.0.tgz#93b93971400a19522482ccef3d092284a3120fb9"
+  integrity sha1-k7k5cUAKGVIkgszvPQkihKMSD7k=
+
+"@interactjs/reflow@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/reflow/download/@interactjs/reflow-1.10.0.tgz#7ff81aa2c9fb380dde3c06250d59990ef94b155a"
+  integrity sha1-f/gaosn7OA3ePAYlDVmZDvlLFVo=
+  optionalDependencies:
+    "@interactjs/interact" "1.10.0"
+
+"@interactjs/snappers@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/snappers/download/@interactjs/snappers-1.10.0.tgz#bb49a9327fe37a70f410bae98b41394591ed9eb0"
+  integrity sha1-u0mpMn/jenD0ELrpi0E5RZHtnrA=
+
 "@interactjs/types@1.10.0":
   version "1.10.0"
   resolved "https://registry.npm.taobao.org/@interactjs/types/download/@interactjs/types-1.10.0.tgz#c2232ed3ba503891349912fa74aa05aa467403e9"
   integrity sha1-wiMu07pQOJE0mRL6dKoFqkZ0A+k=
+
+"@interactjs/utils@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/utils/download/@interactjs/utils-1.10.0.tgz#072c6f19d8fb82675b1a777e62a1c2e92836e652"
+  integrity sha1-ByxvGdj7gmdbGnd+YqHC6Sg25lI=
+
+"@interactjs/vue@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/@interactjs/vue/download/@interactjs/vue-1.10.0.tgz#27661489a6c1ef3302c9c4081f8f9d8ddc4009f7"
+  integrity sha1-J2YUiabB7zMCycQIH4+djdxACfc=
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -1144,7 +1291,7 @@ ee-first@1.1.1:
   resolved "https://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
-element-resize-detector@^1.1.15:
+element-resize-detector@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npm.taobao.org/element-resize-detector/download/element-resize-detector-1.2.1.tgz#b0305194447a4863155e58f13323a0aef30851d1"
   integrity sha1-sDBRlER6SGMVXljxMyOgrvMIUdE=
@@ -1650,13 +1797,6 @@ inherits@2.0.3:
   version "2.0.3"
   resolved "https://registry.npm.taobao.org/inherits/download/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
-
-interactjs@^1.9.22:
-  version "1.10.0"
-  resolved "https://registry.npm.taobao.org/interactjs/download/interactjs-1.10.0.tgz#0fafd725b1fddfc9671cacd98c4f92ceae73a197"
-  integrity sha1-D6/XJbH938lnHKzZjE+Szq5zoZc=
-  dependencies:
-    "@interactjs/types" "1.10.0"
 
 intersperse@^1.0.0:
   version "1.0.0"
@@ -3230,13 +3370,17 @@ vue-draggable-next@^1.0.8:
   dependencies:
     sortablejs "^1.10.2"
 
-vue-grid-layout@^2.3.8:
-  version "2.3.9"
-  resolved "https://registry.npm.taobao.org/vue-grid-layout/download/vue-grid-layout-2.3.9.tgz#c267e3fe3a7c06234b45c958960c2eca6ee6a4c2"
-  integrity sha1-wmfj/jp8BiNLRclYlgwuym7mpMI=
+vue-grid-layout@^2.3.11:
+  version "2.3.11"
+  resolved "https://registry.npm.taobao.org/vue-grid-layout/download/vue-grid-layout-2.3.11.tgz#4020f996e86e6df374898d253677231176f74cac"
+  integrity sha1-QCD5luhubfN0iY0lNncjEXb3TKw=
   dependencies:
-    element-resize-detector "^1.1.15"
-    interactjs "^1.9.22"
+    "@interactjs/actions" "^1.10.0"
+    "@interactjs/auto-start" "^1.10.0"
+    "@interactjs/dev-tools" "^1.10.0"
+    "@interactjs/interactjs" "^1.10.0"
+    "@interactjs/modifiers" "^1.10.0"
+    element-resize-detector "^1.2.1"
 
 vue-router@^4.0.0-beta.1:
   version "4.0.0-beta.12"

@@ -1,8 +1,8 @@
 <template>
   <div class="line-bar-chart-box">
     <div :class="className" :style="{ height, width}" ref="chartBox"></div>
-    <div>{{ neWtitle }}</div>
-    <div v-for="(item, index) in columns" :key="index">{{ item.label }}</div>
+    <div>{{ title }}</div>
+    <div v-for="(item, index) in data" :key="index">{{ item.date }}data</div>
   </div>
 </template>
 <script>
@@ -42,47 +42,26 @@ export default {
     },
 
   },
-  setup(props) {
+  setup(props, context) {
 
-    
-    const columns = computed(() => {
-    console.log(props.data, props.columns, 4949494949)
-      return props.columns;
-    });    
-
-    const neWtitle = computed(() => {
-      console.log(props.title, 5454654654)
-      return props.title;
-    });    
-    
     watch(
-      columns,
+      () => props.data,
       () => {
-        if (columns) {
-          console.log(columns, 57)
-        }
+          // console.log(props.data, 57)
       },
-      {
-        immediate: true,
-        deep: true
-      },
+      { immediate: true, deep: true },
     )
+
     watch(
       () => props.title,
-      (title, preTitle) => {
-        // console.log(title, preTitle, 73)
-        // if (title) {
-        //   console.log(title, 304)
-        // }
+      (val) => {
+        console.log(val)
       },
-      {
-        immediate: true,
-        deep: true
-      },
+      { immediate: true, deep: true},
     )
 
     return {
-      neWtitle
+      // neWtitle,
     }
   }
 }

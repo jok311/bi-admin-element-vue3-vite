@@ -6,13 +6,15 @@ import router from './router'
 import 'ant-design-vue/dist/antd.css'; 
 
 // import 'ant-design-vue/components/style.js';
-import { DatePicker, Menu } from 'ant-design-vue';
+import { DatePicker, Menu, Table } from 'ant-design-vue';
 
 import App from './App.vue';
 
 const app = createApp(App)
 
+import JATable from './components/global/j-a-table.vue'
 
+app.component('JATable', JATable) // global registration - can be used anywhere
 
 
 
@@ -21,6 +23,7 @@ const app = createApp(App)
 // app.use(antd); //整体引入
 app.use(DatePicker);
 app.use(Menu);
+app.use(Table);
 
 
 //vue全局属性，全局方法，global prototype

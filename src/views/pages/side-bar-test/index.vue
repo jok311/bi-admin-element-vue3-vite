@@ -7,16 +7,16 @@
     {{ title }}
     <div @click="addCount()">count++</div>
     <div>{{ count }}</div>
-    <line-bar-chart :data="data" :columns="columns" :title="title"></line-bar-chart>
+    <line-bar-chart :data="dataColumns.data" :columns="dataColumns.columns" :title="title"></line-bar-chart>
   </div>
 </template>
 <script>
 import { ref, toRefs, reactive, onMounted, watch, watchEffect } from "vue";
-import lineBarChart from "/src/components/global/lineBarChart.vue";
+import lineBarChart from "/src/components/global/line-bar-chart.vue";
 export default {
   components: { lineBarChart },
   setup() {
-    let dataColumns = reactive({
+    let dataColumns = {
       columns: [
         { label: "日期", key: "date" },
         {
@@ -84,26 +84,23 @@ export default {
         { date: "2020-10-08", total: "total", pv: 36725.32 },
         { date: "2020-10-09", total: "total", pv: 256.78 },
       ],
-    })
+    }
 
-
-    let title = ref('标题')
-
-    let count = ref(1)
-
+    let title = ref('标题'), count = ref(1)
     function addCount() {
       count.value++
-      title.value = '新标题' + count.value
-      dataColumns = reactive({    
-        data: [],
-        columns: []
-      })    
+      title.value = '新标题' + count.value 
+      let array = []
+      for (let i = 0; i < 20; i++) {
+        array.push({ date: Math.random() })
+      }
+      dataColumns.data = array
     }
 
     return {
       title,
       count,
-      ...toRefs(dataColumns),
+      dataColumns,
       addCount
     }
   },

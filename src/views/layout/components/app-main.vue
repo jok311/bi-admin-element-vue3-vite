@@ -1,5 +1,5 @@
 <template>
-<div class="app-main-box" style="min-height: 100%">
+<div class="app-main-box">
     <router-view v-slot="{ Component }">
         <keep-alive>
             <component :is="Component" />
@@ -16,6 +16,7 @@ export default {
 
 <style lang="stylus">
 .app-main-box
-    height 56px
+    height 100vh
     flex 1
+    overflow-y scroll
 </style>

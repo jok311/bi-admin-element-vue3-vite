@@ -22,7 +22,7 @@ const config = {
   assetsDir: 'static',
 
   optimizeDeps: {
-    include: ["ant-design-vue", "@ant-design/colors", "echarts", "vue-grid-layout"]
+    include: ["ant-design-vue", "@ant-design/colors", "echarts"]
   },
   alias: {
     // '/@/': path.resolve(__dirname, 'src')
