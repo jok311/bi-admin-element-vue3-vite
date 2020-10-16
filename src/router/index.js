@@ -88,13 +88,25 @@ const router = createRouter({
     },
         
     {
+      path: '',
       component: Layout,
       children: [
         {
-          path: '/side/test',
+          path: '/side/index',
           component: () => import('../views/pages/side-bar-test/index.vue'),
           name: 'SideBar',
           meta: { title: 'SideBar', affix: true }
+        },
+      ]
+    },
+    {
+      component: Layout,
+      children: [
+        {
+          path: '/costumclone/index',
+          component: () => import('../views/pages/costum-clone/index.vue'),
+          name: 'CostumColone',
+          meta: { title: 'CostumColone', affix: true }
         },
       ]
     },

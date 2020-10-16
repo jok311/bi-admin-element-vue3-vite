@@ -2,7 +2,7 @@
   <div class="line-bar-chart-box">
     <div :class="className" :style="{ height, width}" ref="chartBox"></div>
     <div>{{ title }}</div>
-    <div v-for="(item, index) in data" :key="index">{{ item.date }}data</div>
+    <div v-for="(item, index) in data" :key="index">{{ item.date }}--------{{ item.pv }}-------data</div>
   </div>
 </template>
 <script>
@@ -47,7 +47,7 @@ export default {
     watch(
       () => props.data,
       () => {
-          // console.log(props.data, 57)
+          console.log(props.data, 57)
       },
       { immediate: true, deep: true },
     )

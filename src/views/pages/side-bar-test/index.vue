@@ -92,7 +92,7 @@ export default {
       title.value = '新标题' + count.value 
       let array = []
       for (let i = 0; i < 20; i++) {
-        array.push({ date: Math.random() })
+        array.push({ date: Math.random(), total: 'total', pv: Math.random() })
       }
       dataColumns.data = array
     }

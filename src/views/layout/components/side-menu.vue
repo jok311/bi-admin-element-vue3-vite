@@ -39,9 +39,15 @@
           </router-link>          
         </a-menu-item>
         <a-menu-item key="29299">
-          <router-link to="/side/test">
+          <router-link to="/side/index">
             <DesktopOutlined />
             <span>side-test</span>
+          </router-link>          
+        </a-menu-item>
+        <a-menu-item key="292999">
+          <router-link to="/costumclone/index">
+            <DesktopOutlined />
+            <span>costumclone-index</span>
           </router-link>          
         </a-menu-item>
         <a-menu-item key="3">
