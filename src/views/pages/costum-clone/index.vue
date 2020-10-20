@@ -65,13 +65,19 @@ export default {
       return this.list1.map( item => {
         return { ...item }
       })
-    }
+    },
+    newList2() {
+      return this.list2.map( item => {
+        return { ...item }
+      })
+    },
   },
 
   methods: {
     log: function(evt) {
       // window.console.log(evt);
       console.log(this.newList1, 767676)
+      console.log(this.newList2, 77777666666)
     },
     cloneDog({ id }) {
       return {
