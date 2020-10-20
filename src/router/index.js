@@ -34,8 +34,9 @@ const router = createRouter({
   history: routerHistory,
   routes: [
     {
-      path: '/',
-      component: () => import('../views/home/index.vue'),
+      // path: '/',
+      redirect: '/costumclone/index',
+      // component: () => import('../views/home/index.vue'),
       name: 'home'
     },
     {

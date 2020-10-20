@@ -1,9 +1,9 @@
 <template>
-  <div class="row">
+  <div class="costum-clone-box">
     <div class="col-3">
-      <h3>Draggable 1</h3>
+      <h3>拖拽到右侧复制</h3>
       <draggable
-        class="dragArea list-group"
+        class="dragArea list-group list-group-left"
         :list="list1"
         :group="{ name: 'people', pull: 'clone', put: false }"
         :clone="cloneDog"
@@ -16,9 +16,9 @@
     </div>
 
     <div class="col-3">
-      <h3>Draggable 2</h3>
+      <h3>展示box</h3>
       <draggable
-        class="dragArea list-group"
+        class="dragArea list-group list-group-right"
         :list="list2"
         group="people"
         @change="log"
@@ -82,4 +82,29 @@ export default {
   }
 };
 </script>
-<style scoped></style>
+<style lang="stylus" scoped>
+.costum-clone-box
+  display flex
+  background #fff
+  height 100vh
+  padding 0 4px
+  .col-3
+    width 50%  
+    .list-group-left
+      // display flex
+    .list-group-right
+      display inline-block
+      width 100%
+      height 85vh
+      border 1px solid #eee
+      .list-group-item
+        display inline-block
+    .list-group
+      .list-group-item
+        width 150px
+        height 72px
+        margin 0 2px 4px 0
+        text-align center
+        color #fff
+        background rgba(230,75, 77, 1)
+</style>

@@ -10,7 +10,7 @@
       </div>
     </draggable>
 
-    <router-link to="/side/test">
+    <router-link to="/side/index">
       <span>side/test</span>
     </router-link>    
 
