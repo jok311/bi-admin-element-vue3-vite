@@ -32,12 +32,12 @@
             <span>draggable-box</span>
           </router-link>          
         </a-menu-item>
-        <a-menu-item key="29999">
+        <!-- <a-menu-item key="29999">
           <router-link to="/vue-grid-out/index">
             <DesktopOutlined />
             <span>vue-grid-out</span>
           </router-link>          
-        </a-menu-item>
+        </a-menu-item> -->
         <a-menu-item key="29299">
           <router-link to="/side/index">
             <DesktopOutlined />
@@ -50,10 +50,16 @@
             <span>costumclone-index</span>
           </router-link>          
         </a-menu-item>
-        <a-menu-item key="3">
+        <!-- <a-menu-item key="262999">
+          <router-link to="/vuedraggableresizable/index">
+            <DesktopOutlined />
+            <span>vuedraggableresizable-index</span>
+          </router-link>          
+        </a-menu-item> -->
+        <!-- <a-menu-item key="3">
           <InboxOutlined />
           <span>Option 3</span>
-        </a-menu-item>
+        </a-menu-item> -->
         <a-sub-menu key="sub1">
           <template v-slot:title>
             <span><MailOutlined /><span>Navigation One</span></span>

@@ -7,7 +7,6 @@
         :list="list1"
         :group="{ name: 'people', pull: 'clone', put: false }"
         :clone="cloneDog"
-        @change="log"
       >
         <div class="list-group-item" v-for="element in list1" :key="element.id">
           {{ element.name }}
@@ -20,12 +19,15 @@
       <draggable
         class="dragArea list-group list-group-right"
         :list="list2"
+        v-bind="dragOptions"
         group="people"
-        @change="log"
+        @end="log"
       >
+      <transition-group type="transition">
         <div class="list-group-item" v-for="element in list2" :key="element.id">
           {{ element.name }}
         </div>
+       </transition-group>        
       </draggable>
     </div>
 
@@ -71,10 +73,18 @@ export default {
         return { ...item }
       })
     },
+    dragOptions() {
+      return {
+        animation: 200,
+        group: "description",
+        disabled: false,
+        ghostClass: "ghost"
+      };
+    }    
   },
 
   methods: {
-    log: function(evt) {
+    log(evt) {
       // window.console.log(evt);
       console.log(this.newList1, 767676)
       console.log(this.newList2, 77777666666)
@@ -113,4 +123,19 @@ export default {
         text-align center
         color #fff
         background rgba(230,75, 77, 1)
+</style>
+
+
+<style lang="stylus">
+
+.flip-list-move {
+  transition: transform 0.5s;
+}
+.no-move {
+  transition: transform 0s;
+}
+.ghost {
+  opacity: 0.5;
+  background: #c8ebfb;
+}
 </style>

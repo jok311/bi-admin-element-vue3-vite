@@ -34,9 +34,8 @@ const router = createRouter({
   history: routerHistory,
   routes: [
     {
-      // path: '/',
-      redirect: '/costumclone/index',
-      // component: () => import('../views/home/index.vue'),
+      path: '/',
+      component: () => import('../views/home/index.vue'),
       name: 'home'
     },
     {
@@ -101,6 +100,7 @@ const router = createRouter({
       ]
     },
     {
+      path: '',
       component: Layout,
       children: [
         {
@@ -108,6 +108,18 @@ const router = createRouter({
           component: () => import('../views/pages/costum-clone/index.vue'),
           name: 'CostumColone',
           meta: { title: 'CostumColone', affix: true }
+        },
+      ]
+    },
+    {
+      path: '',
+      component: Layout,
+      children: [
+        {
+          path: '/vue-drag-resize/index',
+          component: () => import('../views/pages/vue-drag-resize/index.vue'),
+          name: 'vue-drag-resize',
+          meta: { title: 'vue-drag-resize', affix: true }
         },
       ]
     },
