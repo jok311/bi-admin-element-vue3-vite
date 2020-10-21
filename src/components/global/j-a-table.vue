@@ -1,71 +1,98 @@
 <template>
-  <div class="j-a-table-box">
-    <a-table :columns="columns" :data-source="tableData" bordered>
-      <template slot="name" slot-scope="text">
-        <a>{{ text }}</a>
-      </template>
-      <!-- <template slot="title" slot-scope="currentPageData">
-        Header
-      </template>
-      <template slot="footer" slot-scope="currentPageData">
-        Footer
-      </template> -->
-    </a-table>    
-  </div>
+  <a-table :columns="columns" :data-source="data">
+    <template v-slot:name="{ text }">
+      <a>{{ text }}</a>
+    </template>
+    <template v-slot:customTitle>
+      <span><smile-outlined /> Name</span>
+    </template>
+    <template v-slot:tags="{ text: tags }">
+      <span>
+        <a-tag
+          v-for="tag in tags"
+          :key="tag"
+          :color="tag === 'loser' ? 'volcano' : tag.length > 5 ? 'geekblue' : 'green'"
+        >
+          {{ tag.toUpperCase() }}
+        </a-tag>
+      </span>
+    </template>
+    <template v-slot:action="{ text, record }">
+      <span>
+        <a>Invite 一 {{ record.name }}</a>
+        <a-divider type="vertical" />
+        <a>Delete</a>
+        <a-divider type="vertical" />
+        <a class="ant-dropdown-link"> More actions <down-outlined /> </a>
+      </span>
+    </template>
+  </a-table>
 </template>
-
 <script>
-const c = [
+import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
+const columns = [
   {
-    title: 'Name',
     dataIndex: 'name',
-    scopedSlots: { customRender: 'name' },
+    key: 'name',
+    slots: { title: 'customTitle', customRender: 'name' },
   },
   {
-    title: 'Cash Assets',
-    className: 'column-money',
-    dataIndex: 'money',
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
   },
   {
     title: 'Address',
     dataIndex: 'address',
+    key: 'address',
+  },
+  {
+    title: 'Tags',
+    key: 'tags',
+    dataIndex: 'tags',
+    slots: { customRender: 'tags' },
+  },
+  {
+    title: 'Action',
+    key: 'action',
+    slots: { customRender: 'action' },
   },
 ];
 
-const d = [
+const data = [
   {
     key: '1',
     name: 'John Brown',
-    money: '￥300,000.00',
+    age: 32,
     address: 'New York No. 1 Lake Park',
+    tags: ['nice', 'developer'],
   },
   {
     key: '2',
     name: 'Jim Green',
-    money: '￥1,256,000.00',
+    age: 42,
     address: 'London No. 1 Lake Park',
+    tags: ['loser'],
   },
   {
     key: '3',
     name: 'Joe Black',
-    money: '￥120,000.00',
+    age: 32,
     address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
   },
 ];
 
 export default {
-  setup(props) {
-    let tableData = d, columns = c
+  components: {
+    SmileOutlined,
+    DownOutlined,
+  },
+  data() {
     return {
+      data,
       columns,
-      tableData
-    }
-  }
+    };
+  },
 };
 </script>
-<style>
-th.column-money,
-td.column-money {
-  text-align: right !important;
-}
-</style>

@@ -27,7 +27,7 @@
         <div class="list-group-item" v-for="element in list2" :key="element.id">
           {{ element.name }}
         </div>
-       </transition-group>        
+      </transition-group>        
       </draggable>
     </div>
 
