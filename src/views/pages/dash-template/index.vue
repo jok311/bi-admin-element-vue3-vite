@@ -1,7 +1,7 @@
 <template>
   <div class="dash-template-box">
     dash-template: {{ template }}
-    <j-a-table></j-a-table>
+    <!-- <j-a-table></j-a-table> -->
   </div>
 </template>
 <script>

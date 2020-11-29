@@ -88,7 +88,7 @@ const router = createRouter({
     },
         
     {
-      path: '',
+      // path: '',
       component: Layout,
       children: [
         {
@@ -112,7 +112,7 @@ const router = createRouter({
       ]
     },
     {
-      path: '',
+      // path: '',
       component: Layout,
       children: [
         {

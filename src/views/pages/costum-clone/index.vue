@@ -1,5 +1,6 @@
 <template>
   <div class="costum-clone-box">
+        
     <div class="col-3">
       <h3>拖拽到右侧复制</h3>
       <draggable
