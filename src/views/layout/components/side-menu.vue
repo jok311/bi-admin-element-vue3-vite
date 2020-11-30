@@ -25,6 +25,13 @@
       </template>        
     </el-menu-item>    
 
+    <el-menu-item index="/user/index">
+      <template v-slot:title>
+          <i class="el-icon-menu"></i>
+          <span>user-index</span>
+      </template>        
+    </el-menu-item>    
+
     <el-submenu index="1-4">
       <template v-slot:title>
         <i class="el-icon-menu"></i>

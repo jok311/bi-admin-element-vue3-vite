@@ -123,6 +123,17 @@ const router = createRouter({
         },
       ]
     },
+    {
+      component: Layout,
+      children: [
+        {
+          path: '/user/index',
+          component: () => import('../views/pages/user/index.vue'),
+          name: 'user',
+          meta: { title: 'user', affix: true }
+        },
+      ]
+    },
 
   ]
 })

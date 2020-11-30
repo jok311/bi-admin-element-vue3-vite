@@ -21,17 +21,18 @@
 import md5 from 'blueimp-md5'
 import { getCurrentInstance, ref } from 'vue'
 import { useNotify } from 'element3'
+import Cookies from 'js-cookie'
 export default {
     name: 'Login',
     components: {
     },
     setup() {
+      const { ctx } = getCurrentInstance()
       const email = ref()
       const password = ref()
       const loading = ref(false)
       let notify = useNotify()
 
-      const { ctx } = getCurrentInstance()
       function login() {
         loading.value = true
         let data = {
@@ -40,6 +41,8 @@ export default {
         }
         ctx.postRequest('http://localhost:9521/login', data).then( res => {
           notify({ title: 'success', message: '登陆成功', type: 'success' });          
+          Cookies.set('Authorization', res.data.token)
+          window.localStorage.userInfo = JSON.stringify(res.data.user_info) //user information
           ctx.$router.push('/')
           loading.value = false
         })

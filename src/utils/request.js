@@ -1,9 +1,8 @@
 import axios from 'axios'
-// import Cookies from 'js-cookie'
 // import router from '@/router/index.js'
 // import store from '@/store'
 
-
+import Cookies from 'js-cookie'
 
 // create an axios instance
 const service = axios.create({
@@ -13,7 +12,7 @@ const service = axios.create({
 
 // request interceptor
 service.interceptors.request.use(config => {
-  // config.headers['Authorization'] =  'Bearer a61cfae7708f40c882e3cfafe3aabf94'
+  config.headers['Authorization'] =  `Bearer ${Cookies.get('Authorization')}`
   return config
 }, error => {
   // Do something with request error
