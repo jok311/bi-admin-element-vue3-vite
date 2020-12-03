@@ -1,8 +1,17 @@
 <template>
   <a-table :columns="columns" :data-source="data">
-    <template v-slot:name="{ text }">
+
+    <template v-for="(item, index) in columns" v-slot:[item.dataIndex]="{ text, record }">
+      {{item.dataIndex}}
+      <span :key="index">8888-----{{ text }}</span>
+    </template>    
+    
+    <!-- <template v-slot:name="{ text }">
       <a>{{ text }}</a>
     </template>
+          <template #name="{text}">
+            {{ text }}
+          </template>      
     <template v-slot:customTitle>
       <span><smile-outlined /> Name</span>
     </template>
@@ -25,13 +34,14 @@
         <a-divider type="vertical" />
         <a class="ant-dropdown-link"> More actions <down-outlined /> </a>
       </span>
-    </template>
+    </template> -->
   </a-table>
 </template>
 <script>
 import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
 const columns = [
   {
+    title: 'name',
     dataIndex: 'name',
     key: 'name',
     slots: { title: 'customTitle', customRender: 'name' },
@@ -40,11 +50,13 @@ const columns = [
     title: 'Age',
     dataIndex: 'age',
     key: 'age',
+    slots: { customRender: 'age'}
   },
   {
     title: 'Address',
     dataIndex: 'address',
     key: 'address',
+    slots: { customRender: 'address'}
   },
   {
     title: 'Tags',
@@ -55,6 +67,7 @@ const columns = [
   {
     title: 'Action',
     key: 'action',
+    dataIndex: 'action',
     slots: { customRender: 'action' },
   },
 ];
@@ -92,6 +105,7 @@ export default {
     return {
       data,
       columns,
+
     };
   },
 };
