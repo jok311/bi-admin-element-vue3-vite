@@ -1,5 +1,8 @@
 import axios from 'axios'
 import router from '../router/index.js'
+import {useNotify} from 'element3'
+let notify = useNotify()
+
 // import store from '@/store'
 
 import Cookies from 'js-cookie'
@@ -23,11 +26,7 @@ service.interceptors.request.use(config => {
 // respone interceptor
 service.interceptors.response.use(
   (response) => {
-    //401状态吗，token过期
-    // if (response.data.code == '401' ) {
-    //   Cookies.remove('token');
-    //   router.push("/login")
-    // }
+
 
     // if( response.data.code != 0 ) {
     //   Message({
@@ -44,9 +43,14 @@ service.interceptors.response.use(
   error => {
     console.log('err' + error) // for debug
     const data = error.response.data
-    if( data.code == 401 ) {
-      Cookies.remove('Authorization')
-      router.push('/login')
+    //401状态吗，token过期
+    if (data.code == '401' ) {
+      notify.error({
+        title: '登录过期',
+        message: '请重新登录'
+      });      
+      Cookies.remove('Authorization');
+      router.push("/login")
     }    
     return Promise.reject(data)
   })

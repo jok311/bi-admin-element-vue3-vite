@@ -10,6 +10,12 @@ function resolve(dir) {
 
 const name = defaultSettings.title || 'bi-element-admin-vue3' // page title
 
+const sharedConfig = {
+  alias: {
+    '/@/': path.resolve(__dirname, 'src')
+  }
+}
+
 const config = {
   /**
    * github: https://github.com/vitejs/vite
@@ -24,11 +30,14 @@ const config = {
   optimizeDeps: {
     include: ["ant-design-vue", "@ant-design/colors", "echarts", "vue-draggable-resizable","vue-drag-resize"]
   },
-  alias: {
-    // '/@/': path.resolve(__dirname, 'src')
-    // '/@/': path.resolve(__dirname, './src'),
-    // '/components/': path.resolve(__dirname, './src/components')
-  },
+  // alias: {
+  //   '/@/': path.resolve(__dirname, 'src')
+  //   // '/@/': path.resolve(__dirname, './src'),
+  //   // '/components/': path.resolve(__dirname, './src/components')
+  // },
+
+  transforms: [require('vite-transform-globby-import')(sharedConfig)]
+
   
 
   // rollupInputOptions: {
@@ -41,4 +50,7 @@ const config = {
 
 }
 
-module.exports = config
+module.exports = {
+  ...sharedConfig,
+  ...config
+}
