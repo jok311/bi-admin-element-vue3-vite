@@ -1,164 +1,153 @@
 <template>
-  <div class="side-menu-box" :style="{width: collapsed == false ? '256px' : '80px' }">
+  <div class="side-menu-box">
     <div class="collapsed-box">
-      <span @click="toggleCollapsed">
-        <MenuUnfoldOutlined v-if="collapsed" />
-        <MenuFoldOutlined v-else />
+      <span class="collapsed-btn" @click="isCollapse = !isCollapse">
+        <i class="el-icon-s-unfold" v-if="isCollapse"></i>
+        <i class="el-icon-s-fold" v-else></i>
       </span>
-    </div>
-    <div class="menu-box">
-      <a-menu
-        v-model:openKeys="openKeys"
-        v-model:selectedKeys="selectedKeys"
-        mode="inline"
-        theme="dark"
-        :inline-collapsed="collapsed"
-      >
-        <a-menu-item key="1">
-          <router-link to="/dash/box">
-            <PieChartOutlined />
-            <span>dash-box</span>
-          </router-link>
-        </a-menu-item>
-        <a-menu-item key="2">
-          <router-link to="/dash/template">
-            <DesktopOutlined />
-            <span>dash-template</span>
-          </router-link>          
-        </a-menu-item>
-        <a-menu-item key="2999">
-          <router-link to="/draggable/index">
-            <DesktopOutlined />
-            <span>draggable-box</span>
-          </router-link>          
-        </a-menu-item>
-        <!-- <a-menu-item key="29999">
-          <router-link to="/vue-grid-out/index">
-            <DesktopOutlined />
-            <span>vue-grid-out</span>
-          </router-link>          
-        </a-menu-item> -->
-        <a-menu-item key="29299">
-          <router-link to="/side/index">
-            <DesktopOutlined />
-            <span>side-test</span>
-          </router-link>          
-        </a-menu-item>
-        <a-menu-item key="292999">
-          <router-link to="/costumclone/index">
-            <DesktopOutlined />
+    </div>    
+    
+
+
+    <el-menu
+      class="el-menu-vertical-demo"
+      :router="true"
+      @open="handleOpen"
+      @close="handleClose"
+      :collapse="isCollapse"
+      :default-active="defaultOpeneds"
+    >
+
+    <el-menu-item index="/">
+      <template v-slot:title>
+          <i class="el-icon-menu"></i>
+          <span>home-index</span>
+      </template>        
+    </el-menu-item>    
+
+    <el-menu-item index="/user/index">
+      <template v-slot:title>
+          <i class="el-icon-menu"></i>
+          <span>user-index</span>
+      </template>        
+    </el-menu-item>    
+
+    <el-submenu index="1-4">
+      <template v-slot:title>
+        <i class="el-icon-menu"></i>
+        <span>目录</span>
+      </template>
+      <el-menu-item index="/vue-grid-out/index">
+        <template v-slot:title>
+          <span>vue-grid-out</span>
+        </template>      
+      </el-menu-item>
+    </el-submenu>    
+
+      <el-menu-item index="/costumclone/index">
+        <template v-slot:title>
+            <i class="el-icon-menu"></i>
             <span>costumclone-index</span>
-          </router-link>          
-        </a-menu-item>
-        <!-- <a-menu-item key="262999">
-          <router-link to="/vuedraggableresizable/index">
-            <DesktopOutlined />
-            <span>vuedraggableresizable-index</span>
-          </router-link>          
-        </a-menu-item> -->
-        <!-- <a-menu-item key="3">
-          <InboxOutlined />
-          <span>Option 3</span>
-        </a-menu-item> -->
-        <a-sub-menu key="sub1">
-          <template v-slot:title>
-            <span><MailOutlined /><span>Navigation One</span></span>
-          </template>
-          <a-menu-item key="5">Option 5</a-menu-item>
-          <a-menu-item key="6">Option 6</a-menu-item>
-          <a-menu-item key="7">Option 7</a-menu-item>
-          <a-menu-item key="8">Option 8</a-menu-item>
-          <a-menu-item key="5">Option 5</a-menu-item>
-          <a-menu-item key="6">Option 6</a-menu-item>
-          <a-menu-item key="7">Option 7</a-menu-item>
-          <a-menu-item key="8">Option 8</a-menu-item>
-          <a-menu-item key="5">Option 5</a-menu-item>
-          <a-menu-item key="6">Option 6</a-menu-item>
-          <a-menu-item key="7">Option 7</a-menu-item>
-          <a-menu-item key="8">Option 8</a-menu-item>
-          <a-menu-item key="5">Option 5</a-menu-item>
-          <a-menu-item key="6">Option 6</a-menu-item>
-          <a-menu-item key="7">Option 7</a-menu-item>
-          <a-menu-item key="8">Option 8</a-menu-item>
-        </a-sub-menu>
-        <a-sub-menu key="sub2">
-          <template v-slot:title>
-            <span><AppstoreOutlined /><span>Navigation Two</span></span>
-          </template>
-          <a-menu-item key="9">Option 9</a-menu-item>
-          <a-menu-item key="10">Option 10</a-menu-item>
-          <a-sub-menu key="sub3" title="Submenu">
-            <a-menu-item key="11">
-              Option 11
-            </a-menu-item>
-            <a-menu-item key="12">
-              Option 12
-            </a-menu-item>
-          </a-sub-menu>
-        </a-sub-menu>
-      </a-menu>
-    </div>
+        </template>        
+      </el-menu-item>
+
+
+      <el-menu-item index="/draggable/index">
+        <template v-slot:title>
+            <i class="el-icon-menu"></i>
+            <span>draggable-box</span>
+        </template>                        
+      </el-menu-item>         
+
+
+      <el-menu-item index="/dash/template">
+        <template v-slot:title>
+            <i class="el-icon-menu"></i>
+            <span>dash-template</span>
+        </template>                         
+      </el-menu-item>       
+
+      <el-menu-item index="/dash/box">
+        <template v-slot:title>
+            <i class="el-icon-menu"></i>
+            <span>dash-box</span>
+        </template>                         
+      </el-menu-item>       
+
+      <el-menu-item index="/side/index">
+        <template v-slot:title>
+            <i class="el-icon-menu"></i>
+            <span>side-box</span>
+        </template>            
+      </el-menu-item>       
+    </el-menu>
   </div>
 </template>
 
+
+
 <script>
-import {
-MenuFoldOutlined,
-MenuUnfoldOutlined,
-PieChartOutlined,
-MailOutlined,
-DesktopOutlined,
-InboxOutlined,
-AppstoreOutlined,
-} from '@ant-design/icons-vue';
+import { ref, watch, getCurrentInstance } from "vue";
 export default {
-  components: {
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    PieChartOutlined,
-    MailOutlined,
-    DesktopOutlined,
-    InboxOutlined,
-    AppstoreOutlined,
-  },
-  data() {
-    return {
-      collapsed: false,
-      selectedKeys: [],
-      openKeys: [],
-      preOpenKeys: [],
-    };
-  },
-  watch: {
-    openKeys(val, oldVal) {
-      this.preOpenKeys = oldVal;
-    },
-  },
-  methods: {
-    toggleCollapsed() {
-      this.collapsed = !this.collapsed;
-      this.openKeys = this.collapsed ? [] : this.preOpenKeys;
-    },
+  setup(props) {
+    const { ctx } = getCurrentInstance();
+    let isCollapse = ref(false);
+    let defaultOpeneds = ref('/draggable/index')
+
+
+    function handleOpen(key, keyPath) {
+      // console.log(key, keyPath);
+    }
+    function handleClose(key, keyPath) {
+      // console.log(key, keyPath);
+    }
+
+
+    watch(
+      () => ctx.$root.$route, 
+      val => {
+        defaultOpeneds.value = val.fullPath
+      },
+       { immediate: true, deep: true },      
+    );    
+
+    return { isCollapse, handleOpen, handleClose, defaultOpeneds };
   },
 };
 </script>
+
+
+<style>
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}
+.side-menu-box .el-menu {
+  border-right: none;
+}
+</style>
+
 <style lang="stylus" scoped>
 .side-menu-box
-  background #041527
   height 100vh
-  user-select none
-  overflow-y hidden
+  overflow-y scroll
+  border-right 1px solid rgb(230, 230, 230)
+  background #fff
   .collapsed-box
-    width 100%
-    padding 16px 0
-    background #041527
-    color #ffffff
-    display flex
-    justify-content center
-    align-items center
-    span
-      // font-size 24px
-  .menu-box
-    height 96vh
-    overflow-y scroll
+    .collapsed-btn
+      display block
+      text-align center
+      padding 8px 0
+
+.router-box
+  display block
+  // color rgb(48, 49, 51)
+  text-decoration none
+</style>
+
+<style lang="stylus">
+.side-menu-box
+  .el-menu-item
+    // padding 0 !important
+    // text-align center
 </style>

@@ -88,7 +88,7 @@ const router = createRouter({
     },
         
     {
-      path: '',
+      // path: '',
       component: Layout,
       children: [
         {
@@ -112,7 +112,7 @@ const router = createRouter({
       ]
     },
     {
-      path: '',
+      // path: '',
       component: Layout,
       children: [
         {
@@ -120,6 +120,17 @@ const router = createRouter({
           component: () => import('../views/pages/vue-drag-resize/index.vue'),
           name: 'vue-drag-resize',
           meta: { title: 'vue-drag-resize', affix: true }
+        },
+      ]
+    },
+    {
+      component: Layout,
+      children: [
+        {
+          path: '/user/index',
+          component: () => import('../views/pages/user/index.vue'),
+          name: 'user',
+          meta: { title: 'user', affix: true }
         },
       ]
     },
