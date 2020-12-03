@@ -1,5 +1,5 @@
 import axios from 'axios'
-// import router from '@/router/index.js'
+import router from '../router/index.js'
 // import store from '@/store'
 
 import Cookies from 'js-cookie'
@@ -44,6 +44,10 @@ service.interceptors.response.use(
   error => {
     console.log('err' + error) // for debug
     const data = error.response.data
+    if( data.code == 401 ) {
+      Cookies.remove('Authorization')
+      router.push('/login')
+    }    
     return Promise.reject(data)
   })
 
