@@ -1,6 +1,8 @@
 'use strict'
 const path = require('path')
 
+const svgPlugin = require('vite-plugin-svg');
+
 
 const defaultSettings = require('./src/settings.js')
 
@@ -30,6 +32,9 @@ const config = {
   optimizeDeps: {
     include: ["ant-design-vue", "@ant-design/colors", "echarts", "vue-draggable-resizable","vue-drag-resize"]
   },
+  plugins: [
+    svgPlugin(),
+  ],  
   // alias: {
   //   '/@/': path.resolve(__dirname, 'src')
   //   // '/@/': path.resolve(__dirname, './src'),
