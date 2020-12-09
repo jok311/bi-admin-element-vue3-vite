@@ -91,7 +91,7 @@ import { ref, watch, getCurrentInstance } from "vue";
 export default {
   setup(props) {
     const { ctx } = getCurrentInstance();
-    let isCollapse = ref(false);
+    let isCollapse = ref(true);
     let defaultOpeneds = ref('/draggable/index')
 
 

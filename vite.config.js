@@ -30,7 +30,7 @@ const config = {
   assetsDir: 'static',
 
   optimizeDeps: {
-    include: ["ant-design-vue", "@ant-design/colors", "echarts", "vue-draggable-resizable","vue-drag-resize"]
+    include: ["echarts", "vue-draggable-resizable","vue-drag-resize"]
   },
   plugins: [
     svgPlugin(),

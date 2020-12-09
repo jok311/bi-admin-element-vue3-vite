@@ -3,23 +3,26 @@
     66666
     <!-- <img src="/@/assets/404.svg" alt="404"> -->
     <MyIcon />
-    <!-- <errorIcon /> -->
-    <!-- <component v-bind:is="errorIcon"></component> -->
+    <component v-bind:is="errorIcon"></component>
   </div>
 </template>
 
 
 <script>
-import { ref, getCurrentInstance, onMounted, defineAsyncComponent } from 'vue'
+import { ref, reactive, toRefs, getCurrentInstance, onMounted, defineAsyncComponent, computed } from 'vue'
 import imgs from 'globby!/@/assets/**/*.@(jpg|png|svg)'
-
+let name2 = '404'
 import { VueComponent as MyIcon } from '/@/assets/404.svg';
 
 
+// Get URL to SVG file
+const img = document.createElement('img');
+img.src = '/@/assets/404.svg';
+
+console.log(img, 232323)
+
 console.log(MyIcon, 55555)
 
-
-console.log(imgs, 166666)
 export default {
     name: 'User',
     components: {
@@ -31,11 +34,44 @@ export default {
       const pageNum = ref(1)
       const pageSize = ref(10)
       const className = '404'
-      const errorIcon = defineAsyncComponent( () => import('/@/assets/404.svg'))
-      console.log(errorIcon, 3335555)
+      // const errorIcon = computed( () => defineAsyncComponent( () => import('/@/assets/404.svg')))
+      // console.log(errorIcon, 35)
+      // console.log(import('/@/assets/404.svg'), 3336666)
+
+
+
+      const errorIcon = ref({})
+      asyncComponent()
+
+
+
       onMounted( () => {
         get()
       })
+
+      function asyncComponent() {
+        // let iconName = "404"
+        const name = '404.svg'
+        const path = "/@/assets/404.svg"
+        // let path = `./index.vue`
+
+        console.log(path)
+        import('/@/assets/404.svg').then( module => {
+        // import('/@/assets/404.svg').then( module => {
+          console.log(module, 6666)
+          // errorIcon.value = module.VueComponent
+        })          
+      }
+
+      // (async function importCheck() {
+      //   const name = '404'
+      //   const path = "import('/@/assets/404.svg)"
+      //   console.log(path, 766333)
+      //   console.log(eval(path))
+      //   // const module = await import(path)
+      //   // console.log(module, 5955959599)
+      // })()
+
       function get() {
         let data = {
           page_num: pageNum.value,
