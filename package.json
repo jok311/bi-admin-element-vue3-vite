@@ -7,11 +7,10 @@
   },
   "dependencies": {
     "@seregpie/vue-resize-sensor": "^1.1.2",
-    "ant-design-vue": "^2.0.0-beta.10",
     "axios": "^0.21.0",
     "blueimp-md5": "^2.18.0",
     "echarts": "^4.9.0",
-    "element3": "^0.0.26",
+    "element3": "0.0.26",
     "js-cookie": "^2.2.1",
     "moment": "^2.29.0",
     "sortablejs": "^1.12.0",
